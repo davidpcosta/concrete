@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 1152px;
+   margin: auto;
+}
+
+@font-face {
+  font-family: Monaco;
+  src: url(fonts/monaco.ttf);
+}
+
+@font-face {
+  font-family: Raleway-ExtraLightItalic;
+  src: url(fonts/Raleway-ExtraLightItalic.ttf);
+}
+
+@font-face {
+  font-family: Raleway-Light;
+  src: url(fonts/Raleway-Light.ttf);
+}
+
+@font-face {
+  font-family: Raleway-Regular;
+  src: url(fonts/Raleway-Regular.ttf);
+}
+
+.title {
+  font-family: Monaco, sans-serif;
+  font-size: 60px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.title span {
+  font-family: Raleway-ExtraLightItalic, sans-serif;
+  margin-left: 20px;
+  font-weight: 200;
+}
+
+.ic {
+  /* Hide text */
+  overflow: hidden;
+  float: left;
+  width: 32px;
+  height: 32px;
+}
+
+.ic-search {
+  background: url(icons/ic_search.svg) no-repeat;
+}
+
+.ic-organization {
+  background: url(icons/ic_organization.svg) no-repeat center center;
+}
+
+.ic-location {
+  background: url(icons/ic_location.svg) no-repeat center center;
+}
+
+.ic-stars {
+  background: url(icons/ic_star.svg) no-repeat center center;
+}
+
+.ic-repositories {
+  background: url(icons/ic_repositorie.svg) no-repeat center center;
+}
+
+.ic-followers {
+  background: url(icons/ic_followers.svg) no-repeat center center;
+}

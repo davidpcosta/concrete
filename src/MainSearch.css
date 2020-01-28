@@ -1,0 +1,41 @@
+
+
+.MainSearch {
+  max-width: 1152px;
+  min-height: 700px;
+  padding-top: 244px;
+  margin: auto;
+  text-align: center;
+}
+
+.MainSearch div {
+  display: inline-block;
+}
+
+.MainSearch .title {
+  font-size: 60px;
+  margin-bottom: 5px;
+}
+
+.searchBox {
+  width: 620px;
+  height: 48px;
+  border: 1px solid gray;
+  padding: 0 15px;
+}
+
+.searchButton {
+  width: 100px;
+  height: 50px;
+  
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background: #ac53f2;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

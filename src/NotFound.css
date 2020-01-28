@@ -1,0 +1,11 @@
+.NotFound {
+  text-align: center;
+  padding: 118px 0;
+}
+
+.NotFound span {
+  font-family: Raleway-Regular, sans-serif;
+  font-size: 40px;
+  color: #ac53f2;
+  font-weight: normal;
+}

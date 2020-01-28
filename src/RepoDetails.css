@@ -1,0 +1,34 @@
+.RepoDetails {
+  margin: 0 28px;
+}
+
+.RepoDetails ul li {
+  margin-bottom: 30px;
+}
+
+.RepoDetails .repoTitle {
+  font-family: Raleway-Regular, sans-serif;
+  font-size: 35px;
+  color: #ac53f2;
+  font-weight: normal;
+
+  margin: 0;
+}
+
+.RepoDetails .repoDescription {
+  font-family: Raleway-Light, sans-serif;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.RepoDetails .repoStars {
+  font-family: Raleway-Light, sans-serif;
+  font-size: 20px;
+  color: #5c5c5c;
+  font-weight: 300;
+  line-height: 32px;
+  display: block;
+}

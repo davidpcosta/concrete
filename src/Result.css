@@ -1,0 +1,13 @@
+.Result header {
+  margin: 35px 25px;
+  display: flex;
+}
+
+.Result header .title {
+  font-size: 40px;
+  width: 350px;
+}
+
+.Result header .title span {
+  margin-left: 10px;
+}
