@@ -8,6 +8,11 @@
   color: #5c5c5c;
 }
 
+.UserDetails .avatar img {
+  width: 280px;
+  height: 280px;
+}
+
 .UserDetails ul li {
   margin: 7px 0;
 }

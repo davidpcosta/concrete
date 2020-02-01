@@ -57,7 +57,10 @@ ul {
 }
 
 .ic-search {
+  display: inline-block;
   background: url(icons/ic_search.svg) no-repeat;
+  width: 37px;
+  height: 37px;
 }
 
 .ic-organization {

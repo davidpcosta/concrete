@@ -27,6 +27,7 @@
 .searchButton {
   width: 100px;
   height: 50px;
+  float: right;
   
   border: none;
   margin: 0;

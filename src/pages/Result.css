@@ -8,6 +8,11 @@
   width: 340px;
 }
 
+.Result header .title a{
+  text-decoration: none;
+  color: #000000;
+}
+
 .Result header .title span {
   margin-left: 10px;
 }

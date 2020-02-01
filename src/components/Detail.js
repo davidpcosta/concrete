@@ -5,10 +5,11 @@ import './Detail.css';
 
 class Detail extends React.Component {
   render = () => {
+    const {user, repos} = this.props;
     return (
       <div className="Detail">
-        <UserDetails />
-        <RepoDetails />
+        <UserDetails user={user} />
+        <RepoDetails repos={repos} />
       </div>
     );
   }
