@@ -25,7 +25,7 @@ class SearchBox extends React.Component {
   render = () => {
     return (
         <form onSubmit={this.handleFormSubmit}>
-          <div>
+          <div className="searchBoxContainer">
             <input className="searchBox" type="text" value={ this.state.searchText } onChange={ this.handleTextChange } />
             <button className="searchButton" type="submit">
               <i className="ic-search"></i>

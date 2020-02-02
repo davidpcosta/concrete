@@ -16,3 +16,17 @@
 .Result header .title span {
   margin-left: 10px;
 }
+
+@media  only screen and (max-width: 800px) {
+  .Result header {
+    display: block;
+  }
+
+  .Result header h1 {
+    text-align: center;
+  }
+
+  .Result header .title {
+    width: auto;
+  }
+}
