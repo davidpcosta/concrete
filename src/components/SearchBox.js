@@ -1,5 +1,7 @@
 import React from 'react';
 import './SearchBox.css';
+import { connect } from 'react-redux';
+import { fetchUserData, fetchReposData } from '../store/actions';
 
 class SearchBox extends React.Component {
 
@@ -15,6 +17,8 @@ class SearchBox extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+    this.props.fetchUserData(this.state.searchText);
+    this.props.fetchReposData(this.state.searchText);
     this.props.history.push("/" + this.state.searchText);
   }
 
@@ -32,4 +36,15 @@ class SearchBox extends React.Component {
   }
 }
 
-export default SearchBox;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUserData: (searchText) => {
+      dispatch(fetchUserData(searchText));
+    },
+    fetchReposData: (searchText) => {
+      dispatch(fetchReposData(searchText));
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(SearchBox);

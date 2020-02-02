@@ -6,7 +6,11 @@ const UserDetails = ({ user }) => {
     <div className="UserDetails">
       <ul>
         <li className="avatar"> <img src={ user.avatar_url } alt="Avatar" /></li>
+        
+        {user.name ? 
         <li className="name"><span>{ user.name }</span></li>
+        : null}
+
         <li className="username"><span>{ user.login }</span></li>
 
         {user.company ? 

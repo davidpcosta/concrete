@@ -10,10 +10,26 @@ import SearchBox from '../components/SearchBox';
 
 class Result extends React.Component {
 
-  constructor(props) {
-    super(props);
-    props.fetchUserData(props.searchText);
-    props.fetchRepoData(props.searchText);
+  componentDidMount = () => {
+
+    // Handle page reaload
+    if (!this.props.user.legth) {
+      console.log('Page reloaded');
+      this.fetchData(this.props.searchText);
+    }
+
+    // Handle back button
+    this.props.history.listen((location, action) => {
+      if (action === 'POP') {
+        console.log('Back button pressed');
+        this.fetchData(this.props.searchText);
+      }
+    });
+  }
+
+  fetchData = (searchText) => {
+    this.props.fetchUserData(searchText);
+    this.props.fetchReposData(searchText);
   }
 
   render = () => {
@@ -27,7 +43,7 @@ class Result extends React.Component {
         {user.login ? 
           <Detail user={ user } repos={ repos } />
         :
-          <NotFound isVisible={false} />
+          <NotFound />
         }
       </div>
     );
@@ -47,7 +63,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchUserData: (searchText) => {
       dispatch(fetchUserData(searchText));
     },
-    fetchRepoData: (searchText) => {
+    fetchReposData: (searchText) => {
       dispatch(fetchReposData(searchText));
     }
   }
