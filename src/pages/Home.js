@@ -6,7 +6,7 @@ class Home extends React.Component {
   render = () => {
     const { history } = this.props;
     return (
-      <div className="MainSearch">
+      <div className="Home">
         <h1 className="title">Github<span>Search</span></h1>
         <SearchBox history={ history } searchText='' />
       </div>

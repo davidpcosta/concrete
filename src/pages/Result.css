@@ -1,14 +1,14 @@
 .Result header {
-  margin: 35px 25px;
+  margin: 35px 0;
   display: flex;
 }
 
 .Result header .title {
   font-size: 40px;
-  width: 340px;
+  width: 320px;
 }
 
-.Result header .title a{
+.Result header .title a {
   text-decoration: none;
   color: #000000;
 }
@@ -17,7 +17,17 @@
   margin-left: 10px;
 }
 
-@media  only screen and (max-width: 800px) {
+.Result header .headerTitle {
+  width: 280px;
+  margin: 0 20px;
+}
+
+.Result header .headerSearch {
+  width: 100%;
+  margin: 0 20px;
+}
+
+@media  only screen and (max-width: 750px) {
   .Result header {
     display: block;
   }
@@ -27,6 +37,15 @@
   }
 
   .Result header .title {
+    width: auto;
+  }
+
+  .Result header .headerTitle {
+    width: auto;
+    margin: 0 20px;
+  }
+
+  .Result header .headerSearch {
     width: auto;
   }
 }

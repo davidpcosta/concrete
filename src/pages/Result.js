@@ -37,8 +37,12 @@ class Result extends React.Component {
     return (
       <div className="Result">
         <header>
-          <h1 className="title"><Link to="/">Github<span>Search</span></Link></h1>
-          <SearchBox history={ history } searchText={ searchText } />
+          <div className="headerTitle">
+            <h1 className="title"><Link to="/">Github<span>Search</span></Link></h1>
+          </div>
+          <div className="headerSearch">
+            <SearchBox history={ history } searchText={ searchText } />
+          </div>          
         </header>
         {user.login ? 
           <Detail user={ user } repos={ repos } />
