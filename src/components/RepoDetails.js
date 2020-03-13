@@ -1,7 +1,9 @@
 import React from 'react';
 import './RepoDetails.css';
+import Loading from '../components/Loading'
+import { connect } from 'react-redux';
 
-const RepoDetails = ({ repos }) => {
+const RepoDetails = ({ repos, isFetching }) => {
   const repoList = repos.sort((a, b) => b.stargazers_count - a.stargazers_count).map(repo => {
     return (
       <li className="repo" key={ repo.id }>
@@ -14,12 +16,22 @@ const RepoDetails = ({ repos }) => {
 
   return (
     <div className="RepoDetails">
+      {!isFetching.repos ? 
       <ul>
         { repoList }
       </ul>
+      :
+      <Loading text="Loading repos..." />
+      }
 
     </div>
   );
 }
 
-export default RepoDetails;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    isFetching: state.isFetching
+  }
+};
+
+export default connect(mapStateToProps)(RepoDetails);

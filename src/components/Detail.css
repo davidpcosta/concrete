@@ -2,13 +2,17 @@
   display: flex;
 }
 
-@media  only screen and (max-width: 750px) {
+@media  only screen and (max-width: 800px) {
   .Detail {
     display: block;
   }
-  
+
+  .UserDetails {
+    width: auto;
+  }
+
   .RepoDetails {
     margin-top: 40px;
-    width: auto;
+    width: 100%;
   }
 }

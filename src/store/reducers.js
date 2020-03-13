@@ -1,8 +1,17 @@
+const CLEAR_DATA = "CLEAR_DATA";
 const FETCH_USER = "FETCH_USER";
 const FETCH_REPOS = "FETCH_REPOS";
+const SHOW_USER_LOADING = "SHOW_USER_LOADING";
+const SHOW_USER_REPOS_LOADING = "SHOW_USER_REPOS_LOADING";
+const HIDE_USER_LOADING = "HIDE_USER_LOADING";
+const HIDE_USER_REPOS_LOADING = "HIDE_USER_REPOS_LOADING";
 const FETCH_USER_ERROR = 'FETCH_USER_ERROR';
 
 const iniState = {
+    isFetching: {
+      user: false,
+      repos: false
+    },
     user: {},
     repos: []
 }
@@ -10,15 +19,53 @@ const iniState = {
 function reducers(state = iniState, action) {
 
   switch (action.type) {
-    case FETCH_USER:
+
+    case SHOW_USER_LOADING:
       return {
-          ...state,
-          user: {
-              ...action.user
-            }
+        ...state,
+        isFetching: {
+          ...state.isFetching,
+          user: true
+        }
       };
 
-    case FETCH_USER_ERROR:
+    case SHOW_USER_REPOS_LOADING:
+      return {
+        ...state,
+        isFetching: {
+          ...state.isFetching,
+          repos: true
+        }
+      };
+
+    case HIDE_USER_LOADING:
+      return {
+        ...state,
+        isFetching: {
+          ...state.isFetching,
+          user: false
+        }
+      };
+
+    case HIDE_USER_REPOS_LOADING:
+      return {
+        ...state,
+        isFetching: {
+          ...state.isFetching,
+          repos: false
+        }
+      };
+
+    case FETCH_USER:
+      return {
+        ...state,
+        user: {
+            ...action.user
+          }
+      };
+
+      case CLEAR_DATA:
+      case FETCH_USER_ERROR:
       return {
         ...state,
         user: {},
@@ -30,12 +77,12 @@ function reducers(state = iniState, action) {
         ...state,
         repos: [
           ...action.repos
-        ]    
+        ]
       };
     
     default: 
       return state;
-  }  
+  }
 }
 
 export default reducers;

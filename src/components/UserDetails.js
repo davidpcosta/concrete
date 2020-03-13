@@ -1,9 +1,12 @@
 import React from 'react';
 import './UserDetails.css';
+import Loading from '../components/Loading'
+import { connect } from 'react-redux';
 
-const UserDetails = ({ user }) => {
+const UserDetails = ({ user, isFetching }) => {
   return (
     <div className="UserDetails">
+      {!isFetching.user ? 
       <ul>
         <li className="avatar"> <img src={ user.avatar_url } alt="Avatar" /></li>
         
@@ -44,8 +47,18 @@ const UserDetails = ({ user }) => {
           <span>{ user.followers }</span>
         </li>
       </ul>
+      :
+      <Loading text="Loading user data..." />
+      }
     </div>
   );
 }
 
-export default UserDetails;
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    isFetching: state.isFetching
+  }
+};
+
+export default connect(mapStateToProps)(UserDetails);

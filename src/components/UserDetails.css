@@ -1,6 +1,6 @@
 .UserDetails {
   width: 280px;
-  margin: 0 20px;
+  margin: 0 28px;
 
   font-family: Raleway-Light, sans-serif;
   font-size: 20px;
@@ -31,12 +31,4 @@
 .UserDetails .username {
   margin: 0;
   margin-bottom: 30px;
-}
-
-
-
-@media  only screen and (max-width: 450px) {
-  .UserDetails {
-    margin: auto;
-  }
 }

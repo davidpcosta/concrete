@@ -1,20 +1,16 @@
-.Home {
-  padding: 200px 20px 0;
+.MainSearch {
+  max-width: 1152px;
+  min-height: 700px;
+  padding-top: 244px;
   margin: auto;
   text-align: center;
 }
 
-.Home form {
-  margin: auto;
+.MainSearch div {
+  display: inline-block;
 }
 
-.Home .title {
+.MainSearch .title {
   font-size: 60px;
   margin-bottom: 5px;
-}
-
-@media  only screen and (max-width: 450px) {
-  .Home .title {
-    font-size: 36px;
-  }  
 }

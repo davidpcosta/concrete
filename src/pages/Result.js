@@ -33,22 +33,20 @@ class Result extends React.Component {
   }
 
   render = () => {
-    const {user, repos, history, searchText} = this.props;
+    const {user, repos, isFetching, history, searchText} = this.props;
     return (
       <div className="Result">
         <header>
-          <div className="headerTitle">
-            <h1 className="title"><Link to="/">Github<span>Search</span></Link></h1>
-          </div>
-          <div className="headerSearch">
-            <SearchBox history={ history } searchText={ searchText } />
-          </div>          
+          <h1 className="title"><Link to="/">Github<span>Search</span></Link></h1>
+          <SearchBox history={ history } searchText={ searchText } />
         </header>
-        {user.login ? 
-          <Detail user={ user } repos={ repos } />
-        :
-          <NotFound />
+        {
+          (isFetching.user || isFetching.repos || user.login) ? 
+            <Detail user={ user } repos={ repos } />
+          :
+            <NotFound />
         }
+    
       </div>
     );
   }
@@ -58,7 +56,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     searchText: ownProps.match.params.login,
     user: state.user,
-    repos: state.repos
+    repos: state.repos,
+    isFetching: state.isFetching
   }
 };
 
