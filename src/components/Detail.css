@@ -6,6 +6,7 @@
   .Detail {
     display: block;
   }
+  
 
   .UserDetails {
     width: auto;
@@ -15,5 +16,5 @@
     margin-top: 40px;
     width: 100%;
   }
-  
+
 }
